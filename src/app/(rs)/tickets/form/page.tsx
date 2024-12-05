@@ -1,6 +1,6 @@
 import { getCustomer } from "@/app/lib/queries/getCustomers";
 import { getTicket } from "@/app/lib/queries/getTicket";
-import { BackButton } from "@/app/components/BackButton";
+import { BackButton } from "@/components/BackButton";
 
 export default async function TicketFormPage({
     searchParams,

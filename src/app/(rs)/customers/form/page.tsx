@@ -1,6 +1,6 @@
 import { getCustomer } from "@/app/lib/queries/getCustomers";
 import { promises } from "dns";
-import { BackButton } from "@/app/components/BackButton";
+import { BackButton } from "@/components/BackButton";
 export default async function CustomerFormPage({
     searchParams,}:{
         searchParams: Promise<{
