@@ -9,16 +9,17 @@ import {
     FormLabel,
     FormMessage,
 } from '@/components/ui/form'
-import { Input } from '@/components/ui/input'
-import { InputHTMLAttributes } from "react"
+
+import { Textarea } from "@/components/ui/textarea"
+import { TextareaHTMLAttributes } from "react"
 
 type Props<S> = {
     fieldTitle: string,
     nameInSchema: keyof S & string,
     className?: string,
-} & InputHTMLAttributes<HTMLInputElement>
+} & TextareaHTMLAttributes<HTMLTextAreaElement>
 
-export function InputWithLabel<S>({
+export function TextAreaWithLabel<S>({
     fieldTitle, nameInSchema, className, ...props
 }: Props<S>) {
     const form = useFormContext()
@@ -30,16 +31,16 @@ export function InputWithLabel<S>({
             render={({ field }) => (
                 <FormItem>
                     <FormLabel
-                        className="text-base"
+                        className="text-base mb-2"
                         htmlFor={nameInSchema}
                     >
                         {fieldTitle}
                     </FormLabel>
 
                     <FormControl>
-                        <Input
+                        <Textarea
                             id={nameInSchema}
-                            className={`w-full max-w-xs disabled:text-blue-500 dark:disabled:text-yellow-300 disabled:opacity-75 ${className}`}
+                            className={`disabled:text-blue-500 dark:disabled:text-yellow-300 disabled:opacity-75 ${className}`}
                             {...props}
                             {...field}
                         />
